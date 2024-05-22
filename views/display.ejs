@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Display</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <style>
+  body{
+    background: url("/image/background.png") no-repeat fixed center;
+    color: white;
+  }
+  .card-body{
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card mt-4 bg-transparent">
+      <div class="card-body">
+
+      <h1><%= article.title %></h1>
+      <div class="text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+      <hr/>
+      <p><%= article.description %></p>
+      <hr/>
+      <p><%- article.html %></p>
+      <a href="/" class="btn btn-secondary">HOME</a>
+      <a href="/edit/<%= article._id %>" class="btn btn-info">Edit</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

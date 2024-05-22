@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blog</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <style>
+  .left {float: left;}
+  .right {float: right;}
+  .clear {clear: both;}
+  body{
+    background: url("/image/background.png") no-repeat fixed center;
+    color: white;
+  }
+  .card-body{
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4 left">Articles</h1>
+    <h1 class="mt-4 right"><%= name %></h1>
+    <div class="clear">
+    <hr/>
+    <a href="/new" class="btn btn-success">New Article</a>
+    </div>
+    <% articles.forEach(article => { %>
+    <div class="card mt-4 bg-transparent">
+        <div class="card-body">
+
+        <h2><%= article.title %></h2>
+            <div class="text-muted mb-2">
+               <%= article.createdAt.toLocaleDateString() %>
+            </div>
+        <p><%= article.description %></p>
+        <a href="/display/<%= article._id %>" class="btn btn-primary">Read More</a>
+        <a href="/edit/<%= article._id %>" class="btn btn-info">Edit</a>
+        <form action="/<%= article._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+        </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+</html>

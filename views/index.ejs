@@ -27,7 +27,6 @@
     <% articles.forEach(article => { %>
     <div class="card mt-4 bg-transparent">
         <div class="card-body">
-
         <h2><%= article.title %></h2>
             <div class="text-muted mb-2">
                <%= article.createdAt.toLocaleDateString() %>
@@ -38,7 +37,6 @@
         <form action="/<%= article._id %>?_method=DELETE" method="POST" class="d-inline">
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
-
         </div>
     </div>
     <% }) %>

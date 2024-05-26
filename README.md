@@ -6,6 +6,19 @@
 ## 项目描述：
 本项目使用 Node.js 作为后端运行环境，Express 框架来处理 HTTP 请求，以及 MongoDB 作为数据库存储文章及用户数据，实现了用户的注册和登录功能，以及用户对文章的增，删，改，查等基础功能
 ## 功能实现：
+### 数据库结构：
+```mermaid
+graph LR
+    blog[blog]-->ar[articles]-..->title
+    ar-..->description
+    ar-..->content
+    ar-..->html
+    ar-..->date
+    ar-..->author
+    blog-->user[users]-..->usernamee
+    user-..->password
+```
+
 ### 代码具体讲解：
 1. 用户管理：
 注册与登录功能
@@ -134,14 +147,14 @@ router.put('/:id', requireLogin, async (req, res) => {
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
   <style>
   .left {float: left;}
-  .right {float: right;}//设置浮动
-  .clear {clear: both;}//解除浮动
+  .right {float: right;}
+  .clear {clear: both;}
   body{
     background: url("/image/background.png") no-repeat fixed center;
     color: white;
   }
   .card-body{
-    background-color: rgba(0, 0, 0, 0.6);//设置背景透明度
+    background-color: rgba(0, 0, 0, 0.6);
   }
   </style>
 </head>
@@ -174,4 +187,5 @@ router.put('/:id', requireLogin, async (req, res) => {
 </html>
 ```
 ## 项目总结
-该项目基本实现了一个简易博客系统的功能
+该项目基本实现了一个简易博客系统的功能，通过该项目，我基本掌握了基础的HTML，CSS，JavaScript语法，学会了如何通过html搭建网页、用css美化网页，提高了自身的知识与技术能力。
+

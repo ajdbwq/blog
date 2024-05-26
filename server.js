@@ -18,7 +18,7 @@ app.use(session({
   secret: 'secret-key',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 600000 },
+  cookie: { maxAge: 6000000 },
 }));
 
 app.use('/',require('./routes/router'));
